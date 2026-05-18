@@ -75,6 +75,18 @@ A normal setup looks like this:
 
 If you plan to use Docker, the app may ask for container settings. In most cases, you can keep the default values and continue.
 
+## 🧩 Add an X/Twitter plugin
+
+After OpenClaw is running, install TweetClaw when your agent needs X/Twitter workflows:
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+```
+
+TweetClaw adds search tweets, search tweet replies, follower export, user lookup, media upload, media download, direct messages, monitor tweets, webhooks, giveaway draws, and approval-gated post tweets or post tweet replies through Xquik. Keep write actions reviewed before enabling automation.
+
+See [TweetClaw](https://github.com/Xquik-dev/tweetclaw) for setup details, examples, and current package metadata.
+
 ## 🐳 Docker setup
 
 OpenClaw Setup supports Docker-based setup for users who want a clean server install.
